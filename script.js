@@ -21,8 +21,8 @@ function setup() {
     ballen.push(bal);
   }
 
-  var superBal = new superbal(randomx, randomy, randomSpeedX, randomSpeedY);
-  ballen.push(superBal);
+   var superbal = new superBal(randomx, randomy, randomSpeedX, randomSpeedY);
+   ballen.push(superbal);
 }
 
 
