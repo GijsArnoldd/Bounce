@@ -1,39 +1,42 @@
-var x = 80;
-var y = 100;
+// globale variabelen
+var ballen = [];
 
+/**
+ * setup
+ * de code in deze functie wordt één keer uitgevoerd door
+ * de p5 library, zodra het spel geladen is in de browser
+ */
 function setup() {
-  
+  // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
   createCanvas(1280, 720);
 
+  for (var i = 0; i < 25; i++) {
+    var randomx = random(50, 1230);
+    var randomy = random(50, 670);
+    var randomSpeedX = random (-5, 5);
+    var randomSpeedY = random (-5, 5);
+
+    var bal = new Bal(randomx, randomy, randomSpeedX, randomSpeedY);
+    
+    ballen.push(bal);
+  }
+
+  var superBal = new superbal(randomx, randomy, randomSpeedX, randomSpeedY);
+  ballen.push(superBal);
 }
 
 
-
+/**
+ * draw
+ * de code in deze functie wordt meerdere keren per seconde
+ * uitgevoerd door de p5 library, nadat de setup functie klaar is
+ */
 function draw() {
-
+  // Kleur de achtergrond blauw, zodat je het kunt zien
   background('blue');
-  
-  const balletjes [10, 30, 40, 50, 80];
-  const snelheid [1, -5, 12, 2, -3];
-  for (var i = 0, i = 4, i++){
-    
-    x = let balletjes[i]
-    y = let balletjes[i]
-    ellipse(x,y,80,80);
-    
-  }
 
-  for (var n = 0, n = 4, n++){
-    if (x < 80 || x > 1280){
-      x = x + (-1 * (let snelheid[n]))
-    }
-    if (y < 0 || y > 720){
-      y = y + (-1 * (let snelheid[n]))
-    }
-    ellipse(x,y,80,80);
+  for(var i = 0; i < ballen.length; i++) {
+    ballen[i].show();
+    ballen[i].update();
   }
-  fill(100, 100, 255);
-
-  // teken een cirkel
-  ellipse(x,y,80,80);
 }
