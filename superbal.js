@@ -1,4 +1,4 @@
-class superBal {
+class Superbal {
     x;
     y;
     speedX;

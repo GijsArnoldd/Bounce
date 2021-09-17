@@ -13,16 +13,17 @@ function setup() {
   for (var i = 0; i < 25; i++) {
     var randomx = random(50, 1230);
     var randomy = random(50, 670);
-    var randomSpeedX = random (-5, 5);
-    var randomSpeedY = random (-5, 5);
+    var randomSpeedX = random (-5, 50);
+    var randomSpeedY = random (-5, 50);
 
     var bal = new Bal(randomx, randomy, randomSpeedX, randomSpeedY);
     
     ballen.push(bal);
+    
   }
-
-   var superbal = new superBal(randomx, randomy, randomSpeedX, randomSpeedY);
-   ballen.push(superbal);
+  var superbal = new Superbal(randomx, randomy, randomSpeedX, randomSpeedY);
+  ballen.push(superbal);
+   
 }
 
 
